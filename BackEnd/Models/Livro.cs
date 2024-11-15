@@ -30,6 +30,4 @@ public partial class Livro
     [Column("Ano")]
     public string Ano { get; set; }
 
-
-
 }

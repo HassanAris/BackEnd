@@ -10,7 +10,6 @@ public class ApplicationDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Configurações adicionais podem ser feitas aqui, se necessário
     }
     public DbSet<Livro> Livro { get; set; }
 }

@@ -25,8 +25,8 @@ namespace BackEnd.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetLivros()
         {
-            var livros = await _livroService.GetLivros();
-            return Ok(livros);
+            var livrosDTO = _mapper.Map<LivroDTO>(await _livroService.GetLivros());
+            return Ok(livrosDTO);
         }
 
         [HttpGet("{id}")]
@@ -43,7 +43,7 @@ namespace BackEnd.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AdicionarLivro(Livro livro)
         {
-            var novoLivro = await _livroService.Adicionar(livro);
+            var novoLivro = _mapper.Map<LivroDTO>(await _livroService.Adicionar(livro));
             return NoContent();
         }
 
